@@ -1,0 +1,31 @@
+<div class="home-container">
+    <app-navbar></app-navbar>
+
+    <div class="container-body">
+        <div class="headings">
+            <h2>Users</h2>
+            <button class="button-class" (click)="addUser()">Add User</button>
+        </div>
+        <table>
+            <tr>
+                <th>S.No.</th>
+                <th>User</th>
+                <th>UserName</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let item of usersResponse; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{item.firstName}} {{item.lastName}}
+                </td>
+                <td>{{item.userName}}</td>
+                <td>{{item.age}}</td>
+                <td>{{ item.salary | currency:"₹"}}</td>
+                <td><button class="button-class edit" (click)="updateUser(i)">Edit</button></td>
+                <td><button class="button-class delete" (click)="deleteUser(i)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

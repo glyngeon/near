@@ -1,0 +1,13 @@
+{
+  "login": {
+    "userName": "alex123",
+    "password": "alex123"
+  },
+  "user_list": {
+    "firstName": "ha",
+    "lastName": "ha",
+    "userName": "ha",
+    "age": "23",
+    "salary": "3000"
+  }
+}

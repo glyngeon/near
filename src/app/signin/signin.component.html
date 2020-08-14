@@ -1,0 +1,46 @@
+<div class="home-container">
+    <app-navbar></app-navbar>
+
+    <div class="container-body">
+
+        <div class="right-site">
+            <div class="signin-body">
+                <h2 class="heading font-size4">Sign In</h2>
+                <form class="signin-form" [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+                    <div class="input-body">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" class="input-field email" formControlName="userName"
+                            placeholder="Please enter username" />
+                        <span class="text-danger"
+                            *ngIf="(f.userName.touched || submitted) && f.userName.errors?.required">
+                            Please enter userName
+                        </span>
+                        <span class="text-danger" *ngIf="f.userName.errors?.userName">
+                            Please enter a valid userName
+                        </span>
+
+                        <label for=" uname"><b>Password</b></label>
+                        <input type="password" class="input-field email" formControlName="password"
+                            placeholder="Please enter password" />
+                        <span class="text-danger"
+                            *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
+                            Password is required
+                        </span>
+                        <span class="text-danger" *ngIf="f.password.touched && f.password.errors?.invalidPassword">
+                            Please enter valid password
+                        </span>
+                        <span class="text-danger" *ngIf="errorMessage">
+                            {{errorMessage}}
+                        </span>
+
+                        <p class="forgot-password font-size8">
+                            Forgot Password
+                        </p>
+                    </div>
+                    <button class="button signin-button font-size6">Sign In</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
